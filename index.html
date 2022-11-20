@@ -23,7 +23,8 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 
-<body class="container">
+<body class="container element">
+       
     <form class="form js-form">
         <h1 class="form__header">Kantor wymiany walut</h1>
         <fieldset class="form__fieldset">
@@ -32,7 +33,7 @@
             <p>
                 <label> 
                     <span class="form__labelText"> Kwota PLN do wymiany </span>
-                    <input class="form__field js-amount" type="number" min="0.1" step="0.1">
+                    <input class="form__field js-amount" type="number" min="0.1" step="0.1" required>
                 </label>
             </p>
             <p>
@@ -47,13 +48,16 @@
                 </label>
             </p>
             <button class="form__button"> przelicz walutę </button>
-            <p > Kwota do wypłaty:
-                <strong class="js-result"> N/a</strong>
+            <p> 
+                <span class="form__resultText"> Kwota do wypłaty: <span>
+               <span class="form__result--item"> <strong class="js-result"></strong> </span>
             </p>
         </fieldset>
 
     </form>
-    </div>
+
+</div>
+</div>
 
 
 </body>

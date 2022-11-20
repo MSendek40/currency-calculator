@@ -3,21 +3,24 @@
     console.log ("welcome in my first calculator where I used switch-case")
 }
 
-let formElement = document.querySelector(".js-form");
-let amountElement = document.querySelector(".js-amount");
-let currencyElement = document.querySelector(".js-currency");
-let resultElement = document.querySelector(".js-result");
+const formElement = document.querySelector(".js-form");
+const amountElement = document.querySelector(".js-amount");
+const currencyElement = document.querySelector(".js-currency");
+const resultElement = document.querySelector(".js-result");
 
-let CHF = 4.79;
-let GBP = 5.39;
-let USD = 4.55;
-let EUR = 4.70;
+const CHF = 4.79;
+const GBP = 5.39;
+const USD = 4.55;
+const EUR = 4.70;
 
 formElement.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    let currency = currencyElement.value;
-    let amount = amountElement.value;
+    const currency = currencyElement.value;
+    const amount = amountElement.value;
+
+    let result;
+
     switch (currency) {
         case "EUR":
         result = (amount/EUR);

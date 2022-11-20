@@ -1,11 +1,12 @@
 .form{
     border: 1px solid black;
     border-radius: 10px;
-    margin-top: 20px;
+    margin-top: 40px;
     padding: 20px;
     background-color: teal;
     color: white;
     box-shadow: 16px 3px 12px -6px teal;
+
 }
 
 .form__fieldset{
@@ -18,6 +19,7 @@
     max-width: 200px;
     width: 100%;
     margin-right: 10px;
+    font-weight: 700;
 }
 
 .form__field{ 
@@ -47,4 +49,32 @@
 
 .form__button:active {
     background-color: rgb(216, 146, 165);
+}
+
+.form__resultText{
+    display: inline-block;
+    max-width: 500px;
+    width: 100%;
+    margin-right: 10px;
+    padding-bottom: 20px;
+    font-weight: 700;
+    
+}
+
+.form__result--item{
+    display: inline-block;
+    border: 1px solid rgb(20, 20, 20);
+    border-radius: 10px;
+    margin-left: 75px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    width: 40%;
+    height: 40px;
+
+}
+
+.form__result--item:hover{
+    background-color: orange;
 }

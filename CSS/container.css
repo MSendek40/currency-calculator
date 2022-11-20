@@ -3,5 +3,13 @@
     margin: auto;
     width: 100%;
     font-family: 'Lato', sans-serif;
+  
 }
 
+.element{
+    background-image: url("../photo/small.jpg");
+    background-repeat: round;
+    background-position: center;
+    background-attachment: fixed;
+
+}

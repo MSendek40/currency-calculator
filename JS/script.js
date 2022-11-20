@@ -1,3 +1,8 @@
+
+{   const welcome = () => {
+    console.log ("welcome in my first calculator where I used switch-case")
+}
+
 let formElement = document.querySelector(".js-form");
 let amountElement = document.querySelector(".js-amount");
 let currencyElement = document.querySelector(".js-currency");
@@ -30,5 +35,8 @@ formElement.addEventListener("submit", (event) => {
             result = (amount/GBP);
             break;
     }
-    resultElement.innerText = result.toFixed(2)
-})
+
+    resultElement.innerText = `${result.toFixed(2)} ${currency}`;
+});
+  
+}

@@ -1,45 +1,54 @@
 
-{   const welcome = () => {
-    console.log ("welcome in my first calculator where I used switch-case")
-}
+{
+    const welcome = () => {
+        console.log("welcome in my first calculator where I used switch-case")
+    }
 
-const formElement = document.querySelector(".js-form");
-const amountElement = document.querySelector(".js-amount");
-const currencyElement = document.querySelector(".js-currency");
-const resultElement = document.querySelector(".js-result");
+    const calculateResult = (amount, currency) => {
+        const rateCHF = 4.79;
+        const rateGBP = 5.39;
+        const rateUSD = 4.55;
+        const rateEUR = 4.70;
+        switch (currency) {
+            case "EUR":
+                return amount / rateEUR;
 
-const CHF = 4.79;
-const GBP = 5.39;
-const USD = 4.55;
-const EUR = 4.70;
+            case "CHF":
+                return amount / rateCHF;
 
-formElement.addEventListener("submit", (event) => {
+            case "USD":
+                return amount / rateUSD;
+
+            case "GBP":
+                return amount / rateGBP;
+        }
+    };
+    
+    const updateResultText = (result, currency) => {
+        const resultElement = document.querySelector(".js-result");
+        resultElement.innerText = `${result.toFixed(2)} ${currency}`;
+    }
+
+const onFormSubmit = (event) => {
     event.preventDefault();
 
+    const amountElement = document.querySelector(".js-amount");
+    const currencyElement = document.querySelector(".js-currency");
+    
     const currency = currencyElement.value;
     const amount = amountElement.value;
 
-    let result;
+    const result = calculateResult(amount, currency);
 
-    switch (currency) {
-        case "EUR":
-        result = (amount/EUR);
-        break;
+   updateResultText(result, currency); 
+}
 
-        case "CHF":
-        result =(amount/CHF);
-        break;
+    const init = () => {
 
-        case "USD":
-            result =(amount/USD);
-            break;
+        const formElement = document.querySelector(".js-form");
 
-        case "GBP":
-            result = (amount/GBP);
-            break;
-    }
+        formElement.addEventListener("submit", onFormSubmit);    
+    };
 
-    resultElement.innerText = `${result.toFixed(2)} ${currency}`;
-});
-  
+    init();
 }
